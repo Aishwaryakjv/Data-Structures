@@ -64,12 +64,14 @@ class Main {
        // Node new_node=new Node(d);
         if(head==null)
             head=new Node(d);
-        Node new_node=new Node(d);
+        else
+        {Node new_node=new Node(d);
         new_node.next=null;
         Node last=head;
         while(last.next!=null)
             last=last.next;
         last.next=new_node;
+        }
   }
   
   public static void main(String[] args) {
