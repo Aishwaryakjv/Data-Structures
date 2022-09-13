@@ -1,0 +1,63 @@
+import java.util.Scanner;
+class Main{
+    Node head;
+    class Node{
+        Node next;
+        int data;
+        Node(int d)
+        {
+            data=d;
+            next=null;
+        }
+    }
+    
+    void push(int d){
+        Node new_node=new Node(d);
+        new_node.next=head;
+        head=new_node;
+    }
+    
+    void element_at_index(int i)
+    {
+        Node temp=head;
+        int count=0;
+        while(temp!=null){
+            if(count==i) 
+            {
+                System.out.println("Element at index: "+temp.data);
+                return;
+            }
+            else{
+                temp=temp.next;
+                count++;
+            }
+            
+        }
+        System.out.println("wrong index");
+        
+    }
+    
+    void print()
+    {
+        Node n=head;
+        while(n!=null){
+            System.out.print(n.data+" ");
+            n=n.next;
+        }
+        System.out.println("\n");
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        Main ob=new Main();
+        ob.push(1);
+        ob.push(2);
+        ob.push(3);
+        ob.push(5);
+        ob.push(6);
+        ob.push(7);
+        ob.print();
+        System.out.println("Enter the index: ");
+        int n=sc.nextInt();
+        ob.element_at_index(n);
+    }
+}
