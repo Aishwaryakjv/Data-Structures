@@ -12,7 +12,6 @@ class Main{
     
     void push(int d){
         Node new_node=new Node(d);
-        size++;
         new_node.next=head;
         head=new_node;
     }
