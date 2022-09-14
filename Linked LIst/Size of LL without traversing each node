@@ -1,0 +1,41 @@
+class Main{
+    Node head;
+    int size=0;
+    // Main(){
+    //     this.size=0;
+    // }
+    static class Node{
+        Node next;
+        int data;
+        Node(int d){
+            this.data=d;
+            next=null;
+        }
+    }
+    void push(int d){
+        Node new_node=new Node(d);
+        size++;
+        new_node.next=head;
+        head=new_node;
+    }
+    void print(){
+        Node n=head;
+        while(n!=null){
+            System.out.print(n.data+" ");
+            n=n.next;
+        }
+    }
+    int getsize(){
+        return size;
+    }
+    public static void main(String args[]){
+        Main ob=new Main();
+        ob.push(1);
+        ob.push(2);
+        ob.push(3);
+        ob.push(4);
+        
+        ob.print();
+        System.out.println("\nsize: "+ob.getsize());
+    }
+}
